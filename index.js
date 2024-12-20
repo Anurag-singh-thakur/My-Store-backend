@@ -14,6 +14,7 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"], 
     credentials: true, 
 }));
+app.options('*', cors());  
 
 dotenv.config();
 cloudinary.config({
