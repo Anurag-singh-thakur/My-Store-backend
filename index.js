@@ -6,7 +6,15 @@ import userRoute from "./route/userRoute.js";
 import productRoute from "./route/productRoute.js";
 import { v2 as cloudinary } from "cloudinary";
 import path from "path";
+import cors from "cors"
 const app = express()
+app.use(cors({
+    origin: "*",  
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    allowedHeaders: ["Content-Type", "Authorization"], 
+    credentials: true, 
+}));
+
 dotenv.config();
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
