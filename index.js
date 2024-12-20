@@ -9,7 +9,7 @@ import path from "path";
 import cors from "cors"
 const app = express()
 app.use(cors({
-    origin: "*",  
+    origin: ["http://localhost:3000","https://my-store-frontend-chi.vercel.app/"],  
     methods: ["GET", "POST", "PUT", "DELETE"], 
     allowedHeaders: ["Content-Type", "Authorization"], 
     credentials: true, 
