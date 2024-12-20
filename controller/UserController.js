@@ -32,12 +32,9 @@ const signController = async (req, res) => {
 
     if (newUser) {
       generateCookie(newUser._id, res);
-      return res.status(201).json({
-        _id: newUser._id,
-        name: newUser.fname,
-        email: newUser.email,
-        username: newUser.username,
-      });
+      return res.status(201).json(
+        newUser
+      );
     } else {
       return res.status(400).json({ error: "Invalid user data" });
     }
