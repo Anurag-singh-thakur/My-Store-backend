@@ -11,9 +11,10 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({
-  origin: "*",   
+  origin: "https://my-store-frontend-delta.vercel.app/",   
   methods: ["GET", "POST", "PUT", "DELETE"],  
   allowedHeaders: ["Content-Type", "Authorization"],   
+  credentials: true, 
 }));
 
   
